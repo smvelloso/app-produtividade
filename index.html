@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rede Girassol — Gestão de Relatórios</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- jsPDF -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-sun"></i></div>
+        <div class="logo-text">
+          <span class="logo-title">Rede Girassol</span>
+          <span class="logo-sub">Direcção de Produção</span>
+        </div>
+      </div>
+      <button class="sidebar-close" id="sidebarClose"><i class="fas fa-times"></i></button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Painel</div>
+      <a href="#" class="nav-item active" data-page="dashboard">
+        <i class="fas fa-th-large"></i><span>Dashboard</span>
+      </a>
+
+      <div class="nav-section-label">Relatórios</div>
+      <a href="#" class="nav-item" data-page="pauta">
+        <i class="fas fa-calendar-alt"></i><span>Relatório de Pauta</span>
+      </a>
+      <a href="#" class="nav-item" data-page="programas-diarios">
+        <i class="fas fa-tv"></i><span>Programas Diários</span>
+      </a>
+      <a href="#" class="nav-item" data-page="programas-gravados">
+        <i class="fas fa-video"></i><span>Programas Gravados</span>
+      </a>
+      <a href="#" class="nav-item" data-page="semanal">
+        <i class="fas fa-chart-bar"></i><span>Relatório Semanal</span>
+      </a>
+
+      <div class="nav-section-label">Histórico</div>
+      <a href="#" class="nav-item" data-page="historico">
+        <i class="fas fa-history"></i><span>Histórico de Envios</span>
+      </a>
+
+      <div class="nav-section-label">Inteligência Artificial</div>
+      <a href="#" class="nav-item" data-page="ia">
+        <i class="fas fa-robot"></i><span>Análise com IA</span>
+        <span class="nav-badge">Claude</span>
+      </a>
+      <a href="#" class="nav-item" data-page="configuracoes">
+        <i class="fas fa-cog"></i><span>Configurações</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MAIN -->
+  <div class="main-wrapper">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+      <div class="topbar-title" id="topbarTitle">Dashboard</div>
+      <div class="topbar-actions">
+        <span class="date-badge"><i class="fas fa-calendar"></i> <span id="currentDate"></span></span>
+      </div>
+    </header>
+
+    <main class="content" id="mainContent">
+      <!-- Páginas injetadas via JS -->
+    </main>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- MODAL PREVIEW -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Pré-visualização</h3>
+        <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modalCancelBtn">Fechar</button>
+        <button class="btn btn-outline" id="modalPdfBtn" style="display:none"><i class="fas fa-file-pdf"></i> Exportar PDF</button>
+        <button class="btn btn-primary" id="modalConfirmBtn"><i class="fas fa-paper-plane"></i> Confirmar Envio</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/pdf.js"></script>
+  <script src="js/ia.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
