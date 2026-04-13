@@ -1,8 +1,7 @@
-// 🔗 ligação com Supabase
 const SUPABASE_URL = "https://aibptrsjjpoaofxlfpqn.supabase.co";
-const SUPABASE_ANON_KEY = "A_TUA_PUBLISHABLE_KEY_AQUI";
+const SUPABASE_ANON_KEY = "COLA_AQUI_A_TUA_PUBLISHABLE_KEY";
 
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 /* ============================================================
    REDE GIRASSOL — app.js — Lógica principal
    ============================================================ */
